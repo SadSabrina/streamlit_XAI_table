@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 @st.cache_data
 
 def get_data():
-    path = [r'./data/xai_md_agnostic_table_cleaned.csv', r'./data/md_specific_cleaned.csv']
+    path = [r'./data/md_agnostic_table_cleaned.csv', r'./data/md_specific_cleaned.csv']
     
     return pd.read_csv(path[0]), pd.read_csv(path[1])
 

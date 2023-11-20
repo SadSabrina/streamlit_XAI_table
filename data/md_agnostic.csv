@@ -1,0 +1,33 @@
+Goal,Output,Method,Library or example,Library or example hyperlink
+Microscope AI,Coefficients,SHAP,"https://shap.readthedocs.io/en/latest/index.html 
+https://interpret.ml/docs/shap.html
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://shap.readthedocs.io/en/latest/index.html"">shap</a>, <a href=""https://interpret.ml/docs/shap.html"">interpet_ml</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Microscope AI,Visual,SHAP,https://shap.readthedocs.io/en/latest/index.html https://interpret.ml/docs/shap.html or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html," <a href=""https://shap.readthedocs.io/en/latest/index.html"">shap</a>, <a href=""https://interpret.ml/docs/shap.html"">interpet_ml</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Microscope AI,Visual,Partial Dependence plots,"https://scikit-learn.org/stable/modules/generated/sklearn.inspection.partial_dependence.html#sklearn.inspection.partial_dependence
+https://pdpbox.readthedocs.io/en/latest/
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://scikit-learn.org/stable/modules/generated/sklearn.inspection.partial_dependence.html#sklearn.inspection.partial_dependence"">sklearn</a>, <a href=""https://pdpbox.readthedocs.io/en/latest/"">pdp_box</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Microscope AI,Visual,ALE ,https://github.com/SeldonIO/alibi/blob/master/doc/source/examples/ale_classification.ipynb," <a href=""https://github.com/SeldonIO/alibi/blob/master/doc/source/examples/ale_classification.ipynb"">alibi</a>"
+Model understating,Coefficients,SHAP,"https://shap.readthedocs.io/en/latest/index.html 
+https://interpret.ml/docs/shap.html
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://shap.readthedocs.io/en/latest/index.html"">shap</a>, <a href=""https://interpret.ml/docs/shap.html"">interpet_ml</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model understating,Coefficients,Individual predictions analysis,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,"<a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model understating,Coefficients,LIME,"https://github.com/marcotcr/lime?ysclid=lde9mmnb1o897888624
+https://eli5.readthedocs.io/en/latest/blackbox/lime.html"," <a href=""https://github.com/marcotcr/lime?ysclid=lde9mmnb1o897888624"">LIME</a>, <a href=""https://eli5.readthedocs.io/en/latest/blackbox/lime.html/"">eli5</a> "
+Model understating,Visual,SHAP,"https://shap.readthedocs.io/en/latest/index.html 
+https://interpret.ml/docs/shap.html
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://shap.readthedocs.io/en/latest/index.html"">shap</a>, <a href=""https://interpret.ml/docs/shap.html"">interpet_ml</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model understating,Visual,Partial Dependence plots,"https://scikit-learn.org/stable/modules/generated/sklearn.inspection.partial_dependence.html#sklearn.inspection.partial_dependence
+https://pdpbox.readthedocs.io/en/latest/
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://scikit-learn.org/stable/modules/generated/sklearn.inspection.partial_dependence.html#sklearn.inspection.partial_dependence"">sklearn</a>, <a href=""https://pdpbox.readthedocs.io/en/latest/"">pdp_box</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model understating,Visual,Contrafactual explanations,https://interpret.ml/DiCE/dice_ml.html#,"<a href=""https://interpret.ml/DiCE/dice_ml.html#"">dice_ml</a>"
+Model understating,Visual,Individual changes analysis,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,"<a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model understating,Visual,ICE,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,"<a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model debugging,Visual,Individual changes analysis,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,"<a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model debugging,Visual,Individual predictions analysis,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,"<a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model debugging,Visual,Anchors,https://docs.seldon.io/projects/alibi/en/stable/explanations/examples.html#anchors,"<a href=""https://docs.seldon.io/projects/alibi/en/stable/explanations/examples.html#anchors"">alibi</a>"
+Model debugging,Coefficients,Permutation importances,https://eli5.readthedocs.io/en/latest/,"<a href=""https://eli5.readthedocs.io/en/latest/"">eli5</a>"
+Model debugging,Coefficients,SHAP,"https://shap.readthedocs.io/en/latest/index.html 
+https://interpret.ml/docs/shap.html
+or see https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"," <a href=""https://shap.readthedocs.io/en/latest/index.html"">shap</a>, <a href=""https://interpret.ml/docs/shap.html"">interpet_ml</a> or see <a href=""https://explainerdashboard.readthedocs.io/en/latest/dashboards.html"">explainerdashboard</a>"
+Model debugging,Coefficients,Feature Importances,"https://github.com/oracle/skater/blob/main/examples/sklearn-classifiers.ipynb
+or as a method in sklearn.ensemble models","<a href=""https://github.com/oracle/skater/blob/main/examples/sklearn-classifiers.ipynb"">eli5</a> or as a method in sklearn.ensemble models, XGBoost, CatBoost and LightGBM packages"
