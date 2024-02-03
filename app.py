@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.graph_objects as go
 
 @st.cache_data
-
 def get_data():
     path = [r'./data/md_agnostic_table_cleaned.csv', r'./data/md_specific_cleaned.csv']
     

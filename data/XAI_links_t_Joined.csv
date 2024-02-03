@@ -1,0 +1,26 @@
+Library,Link,Hyperlink,Framework,Data type 
+eli5,https://eli5.readthedocs.io/en/latest/,,"scikit-learn, XGBoost, LightGBM, CatBoost, Keras, sklearn-crfsuite, lightning","Texts, Images, Tabular, Graph"
+pdpbox,https://pdpbox.readthedocs.io/en/latest/,,scikit-learn,Tabular
+shap,https://shap.readthedocs.io/en/latest/index.html,,"scikit-learn, XGBoost, LightGBM, CatBoost,Keras, tensorflow, pytorch, pyspark, transformers","Texts, Images, Tabular, Genomic"
+deeplift,https://github.com/kundajelab/deeplift,,Keras,"Texts, Images, Genomic"
+SALib,https://salib.readthedocs.io/en/latest/index.html,,Keras,Tabular
+LIME,https://github.com/marcotcr/lime?ysclid=lde9mmnb1o897888624,,"scikit-learn, Keras, tensorflow, pytorch","Texts, Images, Tabular"
+interpretML,https://interpret.ml/docs/intro.html,,scikit-learn,Tabular
+dice-ml ,https://interpret.ml/DiCE/dice_ml.html#,,"scikit-learn, Keras, tensorflow, pytorch",Tabular
+interpret-text,https://github.com/interpretml/interpret-text?ysclid=ldebiwr4jr824513795,,"scikit-learn, pytorch",Texts
+treeinterpreter,https://github.com/andosa/treeinterpreter?ysclid=ldebcszqa569676653,,scikit-learn,Tabular
+graphviz-ML,https://github.com/MrColoratus/graphviz-ML?ysclid=lf6msa8oig976631200,,"scikit-learn, SciPy",Tabular
+captum (with VPN),https://captum.ai/,,pytorch,"Texts, Images, Tabular"
+skater (DOESN'T WORK 13.01.24) ,https://github.com/oracle/Skater?ysclid=ldimcqkpbg991351715,,"scikit-learn, XGBoost, Keras","Texts, Images, Tabular"
+transformers-interpret,https://github.com/cdpierse/transformers-interpret?ysclid=ldooagvbpq193759438,,transformers,"Texts, Images"
+bertviz,https://github.com/jessevig/bertviz?ysclid=lf3tgglrjl425622230,,transformers,Texts
+alibi,https://github.com/SeldonIO/alibi,,"scikit-learn, Keras, tensorflow, pytorch",Graph
+treeInterpreter,https://github.com/andosa/treeinterpreter,,scikit-learn,"Texts, Images, Tabular"
+Explainer dashboard,https://explainerdashboard.readthedocs.io/en/latest/dashboards.html,,"scikit-learn, skorch","Texts, Images, Tabular"
+Permutation Importance,https://permutationimportance.readthedocs.io/en/latest/index.html,,"scikit-learn, Keras","Texts, Tabular"
+Quantus,https://github.com/understandable-machine-intelligence-lab/Quantus,,"Keras, tensorflow, pytorch, transformers","Images, Tabular"
+tf-explain,https://tf-explain.readthedocs.io/en/latest/,,tensorflow,"Texts, Images, Tabular"
+zennit,https://github.com/chr5tphr/zennit,,pytorch,"Texts, Images, Tabular"
+shapash,https://github.com/MAIF/shapash#how_shapash_works,,"scikit-learn, XGBoost, LightGBM, CatBoost",Tabular
+AIX360,https://github.com/Trusted-AI/AIX360,,"scikit-learn, tensorflow","Texts, Images, Tabular"
+OMNIXai,https://github.com/salesforce/OmniXAI,,"Keras, pytorch","Texts, Images, Tabular, Time Series"
