@@ -29,10 +29,11 @@ st.markdown('''
 
 **Полезные ресурсы об Explainable AI:**
 
-Электронная книга ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/), автор Кристоф Молнар
+- Электронная книга ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/), автор Кристоф Молнар
+- Мой [DataBlog](https://t.me/jdata_blog), об XAI и не только =)           
 ''')
 
-
+st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 # Data
 merged_table = get_data()
 
