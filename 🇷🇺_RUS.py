@@ -3,6 +3,7 @@ import pandas as pd
 from xai_table_functions import plot_data_with_hyperlinks, filter_dataframe
 import plotly.graph_objects as go
 
+st.set_page_config(page_title="RUS", page_icon="🇷🇺")
 
 @st.cache_data
 def get_data():
@@ -25,6 +26,7 @@ st.markdown('''
 
 - типа данных, на которых обучена модель
 - фреймворка, с помощью которого модель была обучена
+            
 Соответственно, именно такая фильтрация реализована здесь.
 
 **Полезные ресурсы об Explainable AI:**
