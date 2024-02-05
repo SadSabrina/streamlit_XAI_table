@@ -19,8 +19,9 @@ st.title('Find a way to make your AI explainable')
 st.markdown('''
 Here you can choose a library that offers methods for interpreting models to suit your task. The classification of libraries was implemented taking into account the practical characteristics that influence the ability and impossibility of using appropriate interpretation methods. It was found that in practical use, the choice of a specific library will depend on:
 
-type of data on which the model is trained
-framework with which the model was trained
+- type of data on which the model is trained
+- framework with which the model was trained
+
 Accordingly, this is exactly the kind of filtering that is implemented here.
 
 Useful resources about Explainable AI:
