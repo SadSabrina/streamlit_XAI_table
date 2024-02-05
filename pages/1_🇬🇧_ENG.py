@@ -25,7 +25,7 @@ Accordingly, this is exactly the kind of filtering that is implemented here.
 
 Useful resources about Explainable AI:
 
-- Online book ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/) by Christophe Molnar
+- Online book ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/) by Christoph Molnar
 - My DataBlog, about XAI and more =)
 ''')
 
