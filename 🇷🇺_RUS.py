@@ -37,14 +37,6 @@ st.markdown('''
 
 st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 
-#Libraries with metrics
-
-st.markdown('''Бибилиотеки с **метриками** интерпретации''')
-st.markdown('''
-            - [Quantus](https://github.com/understandable-machine-intelligence-lab/Quantus)
-            - [shapash](https://github.com/MAIF/shapash#how_shapash_works)
-            - [AIX360](https://github.com/Trusted-AI/AIX360)''')
-
 # Data
 merged_table = get_data()
 
@@ -65,3 +57,12 @@ if framework_choice or data_type_choice:
     data_to_schow = filter_dataframe(merged_table, framework_choice, data_type_choice)
     fig = plot_data_with_hyperlinks(data_to_schow)
     st.plotly_chart(fig, use_container_width=True)
+
+
+#Libraries with metrics
+
+st.markdown('''Бибилиотеки с **метриками** интерпретации''')
+st.markdown('''
+            - [Quantus](https://github.com/understandable-machine-intelligence-lab/Quantus)
+            - [shapash](https://github.com/MAIF/shapash#how_shapash_works)
+            - [AIX360](https://github.com/Trusted-AI/AIX360)''')
