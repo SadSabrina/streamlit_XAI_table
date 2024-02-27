@@ -36,7 +36,7 @@ merged_table = get_data()
 
 # Frameworks list
 FRAMEWORKS = ['skorch', 'scikit-learn', 'SciPy', 'LightGBM', 'tensorflow', 'XGBoost', 'lightning', 'sklearn-crfsuite',
-              'Keras',  'transformers', 'pyspark', 'pytorch', 'CatBoost']
+              'Keras',  'transformers', 'pyspark', 'pytorch', 'CatBoost', 'h2o']
 
 #DTYPES
 DTYPES = ['Tabular', 'Images', 'Texts', 'Graph', 'Time Series']
