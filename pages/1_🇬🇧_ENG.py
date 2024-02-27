@@ -8,7 +8,7 @@ st.set_page_config(page_title="ENG", page_icon="🇬🇧")
 
 @st.cache_data
 def get_data():
-    path = r'./data/merged_table.csv'
+    path = r'./data/merged_table2.csv'
 
     return pd.read_csv(path, index_col=0)
 
@@ -27,7 +27,7 @@ Accordingly, this is exactly the kind of filtering that is implemented here.
 Useful resources about Explainable AI:
 
 - Online book ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/) by Christoph Molnar
-- My DataBlog, about XAI and more =)
+- My [DataBlog](https://t.me/jdata_blog), about XAI and more =)
 ''')
 
 st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')

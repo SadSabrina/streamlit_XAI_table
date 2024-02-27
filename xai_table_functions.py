@@ -21,11 +21,11 @@ def plot_data_with_hyperlinks(data):
 
 def filter_dataframe(data, framework=None, dtype=None):
     if framework and dtype:
-        to_schow = data[(data['Framework'].apply(lambda x: True if framework in x else False)) & (
+        to_schow = data[(data['Framework'].apply(lambda x: True if framework.lower() in x.lower() else False)) & (
             data['DataType'].apply(lambda x: True if dtype in x else False))]
 
     elif framework:
-        to_schow = data[data['Framework'].apply(lambda x: True if framework in x else False)]
+        to_schow = data[data['Framework'].apply(lambda x: True if framework.lower() in x.lower() else False)]
 
 
     elif dtype:
