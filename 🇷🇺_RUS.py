@@ -7,7 +7,7 @@ st.set_page_config(page_title="RUS", page_icon="🇷🇺")
 
 @st.cache_data
 def get_data():
-    path = r'./data/merged_table2.csv'
+    path = r'./data/merged_table.csv'
 
     return pd.read_csv(path, index_col=0)
 
