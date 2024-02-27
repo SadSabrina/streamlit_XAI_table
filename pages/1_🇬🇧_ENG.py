@@ -32,7 +32,6 @@ Useful resources about Explainable AI:
 
 st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 
-
 st.markdown('''LinkedIn: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh-35181a286/?trk=nav_responsive_tab_profile_pic&originalSubdomain=ru''')
 
 merged_table = get_data()
