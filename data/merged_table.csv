@@ -26,3 +26,4 @@
 24,OMNIXai,"<a href=""https://github.com/salesforce/OmniXAI"">🔗</a>","Keras, pytorch","Texts, Images, Tabular, Time Series"
 25,saliency,"<a href=""https://github.com/pair-code/saliency"">🔗</a>","tensorflow, pytorch",Images
 26,dalex,"<a href=""https://dalex.drwhy.ai/#api-reference"">🔗</a>","tensorflow, pytorch, keras, h2o, xgboost, autokeras, catboost, lightgbm, scikit-learn",Tabular
+27,xaitk-saliency,"<a href=""https://github.com/XAITK/xaitk-saliency"">🔗</a>",pytorch,Images
