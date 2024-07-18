@@ -46,7 +46,9 @@ To install and use this project, follow these steps:
 
 ## Usage
 
-Examples of using the interface for filtering libraries based on data type and framework will be added soon.
+Simply select the required framework and data type.
+
+![preview](images/preview.png)
 
 ## Contribution
 
