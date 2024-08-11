@@ -6,10 +6,12 @@ import plotly.graph_objects as go
 # st.set_page_config(page_title="RUS", page_icon="🇷🇺")
 
 @st.cache_data
-def get_data():
-    path = r'./data/merged_table.csv'
+def load_data_from_db():
+    engine = create_engine('sqlite:///xai_data.db')
+    query = "SELECT * FROM xai_data"
+    data = pd.read_sql(query, engine, index_col=['Unnamed: 0'])
+    return data
 
-    return pd.read_csv(path, index_col=0)
 
 
 # Title
@@ -41,7 +43,7 @@ st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 st.markdown('''LinkedIn: [Sabrina Sadiekh](www.linkedin.com/in/sabrina-sadiekh-35181a286)''')
 
 # Data
-merged_table = get_data()
+merged_table = load_data_from_db()
 
 # Frameworks list
 FRAMEWORKS = ['skorch', 'scikit-learn', 'SciPy', 'LightGBM', 'tensorflow', 'XGBoost', 'lightning', 'sklearn-crfsuite',
