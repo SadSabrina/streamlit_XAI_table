@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 from xai_table_functions import plot_data_with_hyperlinks, filter_dataframe
 import plotly.graph_objects as go
+from sqlalchemy import create_engine
 
-# st.set_page_config(page_title="RUS", page_icon="🇷🇺")
 
 @st.cache_data
 def load_data_from_db():
