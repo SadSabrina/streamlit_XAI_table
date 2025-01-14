@@ -13,7 +13,6 @@ def load_data_from_db():
     return data
 
 
-
 # Title
 st.title('Find a way to make your AI explainable')
 
@@ -57,12 +56,12 @@ framework_choice = st.selectbox('Select your framework', FRAMEWORKS, index=None,
                                 placeholder='Select your framework')
 data_type_choice = st.selectbox('Select your data type:', DTYPES, index=None,
                                 placeholder='Select your data type')
+
 if framework_choice or data_type_choice:
 
     data_to_schow = filter_dataframe(merged_table, framework_choice, data_type_choice)
     fig = plot_data_with_hyperlinks(data_to_schow)
     st.plotly_chart(fig, use_container_width=True)
-
 
 #Libraries with metrics
 

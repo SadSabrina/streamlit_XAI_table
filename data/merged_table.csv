@@ -29,3 +29,6 @@
 27,xaitk-saliency,"<a href=""https://github.com/XAITK/xaitk-saliency"">🔗</a>",pytorch,Images
 28,CARLA,"<a href=""https://github.com/carla-recourse/CARLA"">🔗</a>","scikit-learn, Keras, tensorflow, pytorch, XGBoost",Tabular
 29,"pyTorch, explain!","<a href=""https://github.com/pietrobarbiero/pytorch_explain"">🔗</a>",pytorch,Images
+30,DALEX,"<a href=""https://github.com/ModelOriented/DALEX"">🔗</a>","scikit-learn, keras, H2O, tidymodels, xgboost",Tabular
+31,anchors,"<a href=""https://github.com/marcotcr/anchor/tree/master"">🔗</a>","scikit-learn, pytorch","Tabular, Texts"
+32,easy_explain ,"<a href=""https://github.com/stavrostheocharis/easy_explain/tree/main"">🔗</a>",pytorch,Images

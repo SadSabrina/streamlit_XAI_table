@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# Укажите путь к CSV-файлу
+# Путь к файлу базы знаний, сохраненному на локальной машине
 csv_file_path = '/Users/sabrinasadieh/Code/streamlit_XAI_table/data/merged_table.csv'
 
 # Загрузка данных из CSV

@@ -27,33 +27,6 @@ The project aims to assist developers and researchers in selecting appropriate t
 - **Telegram**: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)
 - **LinkedIn**: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh)
 
-## Installation
-
-To install and use this project, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SadSabrina/streamlit_XAI_table.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd streamlit_XAI_table
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-Simply select the required framework and data type.
-
-![preview](images/preview.png)
-
-## Contribution
-
-We welcome contributions to the project! If you would like to suggest improvements or add new features, please create a pull request or open an issue.
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

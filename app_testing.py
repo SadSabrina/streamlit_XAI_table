@@ -16,11 +16,12 @@ def load_data_from_db():
 merged_table = load_data_from_db()
 
 # Frameworks list
-FRAMEWORKS = ['skorch', 'scikit-learn', 'SciPy', 'LightGBM', 'tensorflow', 'XGBoost', 'lightning', 'sklearn-crfsuite',
-              'Keras',  'transformers', 'pyspark', 'pytorch', 'CatBoost', 'h2o']
+FRAMEWORKS = ['skorch', 'scikit-learn', 'SciPy', 'LightGBM', 'tensorflow', 
+              'XGBoost', 'lightning', 'sklearn-crfsuite', 'Keras',  'transformers', 
+              'pyspark', 'pytorch', 'CatBoost', 'h2o']
 
 #DTYPES
-DTYPES = ['Tabular', 'Images', 'Texts', 'Graph', 'Time Series']
+DTYPES = ['Tabular', 'Images', 'Texts', 'Graph', 'Time Series', 'Genomic']
 
 
 framework_choice = st.selectbox('Select your framework', FRAMEWORKS, index=None,

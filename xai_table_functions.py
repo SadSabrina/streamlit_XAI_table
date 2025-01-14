@@ -1,4 +1,5 @@
 import plotly.graph_objects as go
+
 def plot_data_with_hyperlinks(data):
     fig = go.Figure(
         data=[
@@ -22,7 +23,8 @@ def plot_data_with_hyperlinks(data):
 def filter_dataframe(data, framework=None, dtype=None):
     if framework and dtype:
         to_schow = data[(data['Framework'].apply(lambda x: True if framework.lower() in x.lower() else False)) & (
-            data['DataType'].apply(lambda x: True if dtype in x else False))]
+            data['DataType'].apply(lambda x: True if dtype in x else False)
+            )]
 
     elif framework:
         to_schow = data[data['Framework'].apply(lambda x: True if framework.lower() in x.lower() else False)]
