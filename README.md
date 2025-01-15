@@ -30,6 +30,7 @@ The project aims to assist developers and researchers in selecting appropriate t
 
 - **Telegram**: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)
 - **LinkedIn**: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh)
+- **mail:** sad.sabrina.d@yandex.ru
 
 ## License
 
