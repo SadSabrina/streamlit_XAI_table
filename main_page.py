@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from sqlalchemy import create_engine
 
 
-#@st.cache_data
+@st.cache_data
 def load_data_from_db():
     engine = create_engine('sqlite:///xai_data.db')
     query = "SELECT * FROM xai_data"
