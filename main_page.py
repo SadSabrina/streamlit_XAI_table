@@ -38,8 +38,8 @@ st.markdown('''
 ''')
 
 st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
-
 st.markdown('''LinkedIn: [Sabrina Sadiekh](www.linkedin.com/in/sabrina-sadiekh-35181a286)''')
+st.markdown('''mail: sad.sabrina.d@yandex.ru''')
 
 st.markdown('''Последнее обновление: 15.01.2025''')
 
