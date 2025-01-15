@@ -16,6 +16,8 @@ The project aims to assist developers and researchers in selecting appropriate t
 - **Data Type**: Filter libraries based on the type of data (tabular data, images, text, etc.) you are working with.
 - **Framework**: Support for popular frameworks such as TensorFlow, PyTorch, scikit-learn, and others.
 
+![img](./images/preview.png)
+
 ## Useful Resources on Explainable AI
 
 - **E-book ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/)**: Author Christoph Molnar.
