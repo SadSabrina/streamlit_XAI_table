@@ -41,6 +41,8 @@ st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 
 st.markdown('''LinkedIn: [Sabrina Sadiekh](www.linkedin.com/in/sabrina-sadiekh-35181a286)''')
 
+st.markdown('''Последнее обновление: 15.01.2025''')
+
 # Data
 merged_table = load_data_from_db()
 
