@@ -11,6 +11,8 @@ Accordingly, this filtering is implemented here.
 
 The project aims to assist developers and researchers in selecting appropriate tools for interpreting machine learning models. We provide a convenient interface for filtering and choosing libraries based on your requirements and conditions.
 
+**Link to the app:** [link](https://xai-table.streamlit.app/english_page)
+
 ## Key Features
 
 - **Data Type**: Filter libraries based on the type of data (tabular data, images, text, etc.) you are working with.
