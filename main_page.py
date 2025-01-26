@@ -41,7 +41,7 @@ st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
 st.markdown('''LinkedIn: [Sabrina Sadiekh](www.linkedin.com/in/sabrina-sadiekh-35181a286)''')
 st.markdown('''mail: sad.sabrina.d@yandex.ru''')
 
-st.markdown('''Последнее обновление: 15.01.2025''')
+st.markdown('''Последнее обновление: 26.01.2025''')
 
 # Data
 merged_table = load_data_from_db()
@@ -71,4 +71,5 @@ st.markdown('''Бибилиотеки с **метриками** интерпре
 st.markdown('''
             - [Quantus](https://github.com/understandable-machine-intelligence-lab/Quantus)
             - [shapash](https://github.com/MAIF/shapash#how_shapash_works)
-            - [AIX360](https://github.com/Trusted-AI/AIX360)''')
+            - [AIX360](https://github.com/Trusted-AI/AIX360)
+            - [explabox](https://github.com/MarcelRobeer/explabox)''')
