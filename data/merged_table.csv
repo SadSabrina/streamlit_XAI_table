@@ -34,3 +34,4 @@
 32,easy_explain ,"<a href=""https://github.com/stavrostheocharis/easy_explain/tree/main"">🔗</a>",pytorch,Images
 33,explabox ,"<a href=""https://github.com/MarcelRobeer/explabox"">🔗</a>","scikit-learn, Keras, tensorflow, pytorch",Texts
 34,xai_evals ,"<a href=""https://pypi.org/project/xai-evals/"">🔗</a>","pytorch, tensorflow, scikit-learn, xgboost","Images, Tabular"
+35,pyXAI ,"<a href=""https://github.com/crillab/pyxai"">🔗</a>","LightGBM, scikit-learn, xgboost","Tabular"
