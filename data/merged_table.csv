@@ -33,3 +33,4 @@
 31,anchors,"<a href=""https://github.com/marcotcr/anchor/tree/master"">🔗</a>","scikit-learn, pytorch","Tabular, Texts"
 32,easy_explain ,"<a href=""https://github.com/stavrostheocharis/easy_explain/tree/main"">🔗</a>",pytorch,Images
 33,explabox ,"<a href=""https://github.com/MarcelRobeer/explabox"">🔗</a>","scikit-learn, Keras, tensorflow, pytorch",Texts
+34,xai_evals ,"<a href=""https://pypi.org/project/xai-evals/"">🔗</a>","pytorch, tensorflow, scikit-learn, xgboost","Images, Tabular"
