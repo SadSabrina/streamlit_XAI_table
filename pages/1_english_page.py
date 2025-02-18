@@ -68,5 +68,5 @@ st.markdown('''
             - [shapash](https://github.com/MAIF/shapash#how_shapash_works)
             - [AIX360](https://github.com/Trusted-AI/AIX360)
             - [explabox](https://github.com/MarcelRobeer/explabox)
-            — [xai_evals](https://pypi.org/project/xai-evals/)
+            - [xai_evals](https://pypi.org/project/xai-evals/)
             ''')
