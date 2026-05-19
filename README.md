@@ -1,46 +1,63 @@
-# Find a way to make your AI explainable
+# XAI Library Navigator
 
-Here you can find a library offering model interpretation methods tailored to your needs. The classification of libraries was implemented considering practical characteristics that influence the feasibility of using specific interpretation methods. It was found that, in practice, the choice of a particular library depends on:
+A Streamlit app for finding and filtering libraries for ML model interpretation — covering both **Classic XAI** and **Mechanistic Interpretability**.
 
-- The type of data the model was trained on
-- The framework used to train the model
+**→ [Open the app](https://xai-table.streamlit.app)**
 
-Accordingly, this filtering is implemented here.
+## What's inside
 
-## About the Project
+**51 libraries** across two paradigms:
 
-The project aims to assist developers and researchers in selecting appropriate tools for interpreting machine learning models. We provide a convenient interface for filtering and choosing libraries based on your requirements and conditions.
+- **Classic XAI** — post-hoc explanation methods: SHAP, LIME, gradients, counterfactuals, feature importance, attention visualization
+- **Mechanistic Interpretability** — internal structure analysis: circuits, sparse autoencoders (SAE), activation patching, steering vectors, knowledge editing
+- **Hybrid** — both approaches
 
-**Link to the app:** [link](https://xai-table.streamlit.app/english_page)
+## Filters
 
-## Key Features
+- Paradigm (Classic XAI / Mechanistic / Hybrid)
+- Data modality (Tabular, Images, Text, Time Series, LLM, Multimodal, Graph)
+- Method type (SHAP, LIME, Gradient, SAE, Steering Vectors, Counterfactual…)
+- Text search across library names and descriptions
+- Toggle inactive libraries (no commits in the last year)
 
-- **Data Type**: Filter libraries based on the type of data (tabular data, images, text, etc.) you are working with.
-- **Framework**: Support for popular frameworks such as TensorFlow, PyTorch, scikit-learn, and others.
+## Pages
 
-![img](./images/preview.png)
+| Page | Description |
+|---|---|
+| Home | Main catalog — English |
+| Suggest a Library | Submit a library for review (sends to author via Telegram) |
+| На русском | Russian version |
+| Admin 🔒 | Add libraries directly to CSV (password-protected) |
+| How-to 🔒 | Maintenance guide (password-protected) |
 
-## Useful Resources on Explainable AI
+## Data
 
-- **E-book ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/)**: Author Christoph Molnar.
-- **[Guide to Interpretability for LLM](https://github.com/JShollaj/awesome-llm-interpretability)**: A guide to understanding and applying interpretation methods for large language models.
-- **My [DataBlog](https://t.me/jdata_blog)**: Articles and notes on Explainable AI (XAI) and other topics in Data Science.
+All library data is stored in `data/xai_libraries.csv` with the following schema:
+
+`library` · `url` · `paradigm` · `modality` · `framework` · `method_category` · `scope` · `model_agnostic` · `description_en` · `stars` · `last_updated` · `topics` · `note`
+
+Metadata (stars, last updated) is fetched automatically from the GitHub API via `enrich.py`.
+
+## Run locally
+
+```bash
+pip install streamlit pandas requests
+streamlit run main_page.py
+```
+
+## Useful resources
+
+- [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/) — Christoph Molnar
+- [Awesome LLM Interpretability](https://github.com/JShollaj/awesome-llm-interpretability)
+- [XAI tutorials](https://github.com/SadSabrina/XAI-open_materials)
+- [DataBlog](https://t.me/jdata_blog)
 
 ## Contacts
 
-- **Telegram**: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)
-- **LinkedIn**: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh)
-- **mail:** sad.sabrina.d@yandex.ru
+- Telegram: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)
+- LinkedIn: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh-35181a286)
+- Email: sad.sabrina.d@yandex.ru
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-**Author**: Sabrina Sadiekh  
-**Creation Date**: July 2024
-
----
-
-Thank you for using our tool to search and select Explainable AI libraries!
+MIT
