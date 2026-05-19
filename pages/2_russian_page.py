@@ -1,26 +1,24 @@
 import streamlit as st
 from xai_table_functions import load_data, filter_data
 
-st.set_page_config(page_title="XAI Navigator — EN", page_icon="🇬🇧", layout="wide")
-
 st.title("XAI Library Navigator")
 st.markdown(
-    "Find a library for interpreting your ML model. "
-    "Filter by paradigm, data modality, and method type."
+    "Подберите библиотеку для интерпретации модели под вашу задачу. "
+    "Фильтруйте по парадигме, модальности данных и типу метода."
 )
 
 df = load_data()
 
 # ── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.header("Filters")
+    st.header("Фильтры")
 
-    search = st.text_input("🔍 Search", placeholder="shap, counterfactual, LLM…")
+    search = st.text_input("🔍 Поиск", placeholder="shap, counterfactual, LLM…")
 
     paradigms = st.multiselect(
-        "Paradigm",
+        "Парадигма",
         ["Classic XAI", "Mechanistic", "Hybrid"],
-        help="Classic XAI — post-hoc methods. Mechanistic — analysis of model internals.",
+        help="Classic XAI — post-hoc методы. Mechanistic — анализ внутренней структуры модели.",
     )
 
     all_modalities = sorted({
@@ -29,7 +27,7 @@ with st.sidebar:
         for v in str(cell).split(",")
         if v.strip()
     })
-    modalities = st.multiselect("Data modality", all_modalities)
+    modalities = st.multiselect("Модальность данных", all_modalities)
 
     all_methods = sorted({
         v.strip()
@@ -37,15 +35,15 @@ with st.sidebar:
         for v in str(cell).split(",")
         if v.strip()
     })
-    methods = st.multiselect("Method type", all_methods)
+    methods = st.multiselect("Тип метода", all_methods)
 
-    show_inactive = st.checkbox("Show inactive libraries", value=False)
+    show_inactive = st.checkbox("Показывать неактивные", value=False)
 
     st.divider()
     st.caption(
-        "**Classic XAI** — post-hoc explanations (SHAP, LIME, gradients, counterfactuals)\n\n"
-        "**Mechanistic** — internal structure analysis (circuits, SAE, steering, activation patching)\n\n"
-        "**Hybrid** — both approaches"
+        "**Classic XAI** — post-hoc объяснения (SHAP, LIME, градиенты, контрфактуалы)\n\n"
+        "**Mechanistic** — анализ внутренней структуры (circuits, SAE, steering, activation patching)\n\n"
+        "**Hybrid** — оба подхода"
     )
     st.divider()
     st.markdown("Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)")
@@ -57,14 +55,14 @@ filtered = filtered.sort_values("stars", ascending=False, na_position="last")
 
 # ── Stats ────────────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
-c1.metric("Total", len(filtered))
+c1.metric("Всего", len(filtered))
 c2.metric("Classic XAI", (filtered["paradigm"] == "Classic XAI").sum())
 c3.metric("Mechanistic", (filtered["paradigm"] == "Mechanistic").sum())
 c4.metric("Hybrid", (filtered["paradigm"] == "Hybrid").sum())
 
 # ── Table ────────────────────────────────────────────────────────────────────
 if filtered.empty:
-    st.info("Nothing found — try adjusting the filters.")
+    st.info("Ничего не найдено — попробуйте изменить фильтры.")
 else:
     display = filtered[[
         "library", "url", "paradigm", "modality",
@@ -78,24 +76,25 @@ else:
         hide_index=True,
         height=600,
         column_config={
-            "library": st.column_config.TextColumn("Library", width=150),
-            "url": st.column_config.LinkColumn("🔗", display_text="open", width=90),
-            "paradigm": st.column_config.TextColumn("Paradigm", width=130),
-            "modality": st.column_config.TextColumn("Modality", width=160),
-            "method_category": st.column_config.TextColumn("Method type", width=220),
+            "library": st.column_config.TextColumn("Библиотека", width=150),
+            "url": st.column_config.LinkColumn("🔗", display_text="открыть", width=90),
+            "paradigm": st.column_config.TextColumn("Парадигма", width=130),
+            "modality": st.column_config.TextColumn("Модальность", width=160),
+            "method_category": st.column_config.TextColumn("Тип метода", width=220),
             "scope": st.column_config.TextColumn("Scope", width=80),
             "model_agnostic": st.column_config.TextColumn("Agnostic", width=85),
             "stars": st.column_config.NumberColumn("⭐", format="%d ★", width=80),
-            "active": st.column_config.TextColumn("Active", width=75),
-            "description_en": st.column_config.TextColumn("Description", width=300),
+            "active": st.column_config.TextColumn("Активна", width=75),
+            "description_en": st.column_config.TextColumn("Описание", width=300),
         },
     )
 
 # ── Resources ────────────────────────────────────────────────────────────────
 st.divider()
 st.markdown(
-    "**Useful resources:** "
+    "**Полезные ресурсы:** "
     "[Interpretable ML Book](https://christophm.github.io/interpretable-ml-book/) · "
     "[Awesome LLM Interpretability](https://github.com/JShollaj/awesome-llm-interpretability) · "
-    "[DataBlog](https://t.me/jdata_blog)"
+    "[DataBlog](https://t.me/jdata_blog) · "
+    "[Туториалы по XAI](https://github.com/SadSabrina/XAI-open_materials)"
 )
