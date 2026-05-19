@@ -27,8 +27,6 @@ A Streamlit app for finding and filtering libraries for ML model interpretation 
 | Home | Main catalog — English |
 | Suggest a Library | Submit a library for review (sends to author via Telegram) |
 | На русском | Russian version |
-| Admin 🔒 | Add libraries directly to CSV (password-protected) |
-| How-to 🔒 | Maintenance guide (password-protected) |
 
 ## Data
 
