@@ -1,77 +1,106 @@
 import streamlit as st
 import pandas as pd
-from xai_table_functions import plot_data_with_hyperlinks, filter_dataframe
-import plotly.graph_objects as go
-from sqlalchemy import create_engine
+from xai_table_functions import load_data, filter_data
 
+st.set_page_config(
+    page_title="XAI Library Navigator",
+    page_icon="🔍",
+    layout="wide",
+)
 
-#@st.cache_data
-def load_data_from_db():
-    engine = create_engine('sqlite:///xai_data.db')
-    query = "SELECT * FROM xai_data"
-    data = pd.read_sql(query, engine, index_col=['Unnamed: 0'])
-    return data
+st.title("XAI Library Navigator")
+st.markdown(
+    "Подберите библиотеку для интерпретации модели под вашу задачу. "
+    "Фильтруйте по парадигме, модальности данных и типу метода."
+)
 
+df = load_data()
 
-# Title
-st.title('Find a way to make your AI explainable')
+# ── Sidebar ──────────────────────────────────────────────────────────────────
+with st.sidebar:
+    st.header("Фильтры")
 
-# Annotation
+    search = st.text_input("🔍 Поиск", placeholder="shap, counterfactual, LLM…")
 
-st.markdown('''
-Здесь вы можете подобрать библиотеку, предлагающую методы интерпретации моделей, под свою задачу. \
+    paradigms = st.multiselect(
+        "Парадигма",
+        ["Classic XAI", "Mechanistic", "Hybrid"],
+        help="Classic XAI — post-hoc методы. Mechanistic — анализ внутренней структуры модели.",
+    )
 
-Классификация библиотек была реализована с учетом практических характеристик, влияющих на возможность и \
-невозможность использовать соответствующие методы интерпретации. Было выявлено, что при практическом использовании \
- выбор конкретной библиотеки будет зависеть от:
+    all_modalities = sorted({
+        v.strip()
+        for cell in df["modality"].dropna()
+        for v in str(cell).split(",")
+        if v.strip()
+    })
+    modalities = st.multiselect("Модальность данных", all_modalities)
 
-- типа данных, на которых обучена модель
-- фреймворка, с помощью которого модель была обучена
-            
-Соответственно, именно такая фильтрация реализована здесь.
+    all_methods = sorted({
+        v.strip()
+        for cell in df["method_category"].dropna()
+        for v in str(cell).split(",")
+        if v.strip()
+    })
+    methods = st.multiselect("Тип метода", all_methods)
 
-**Полезные ресурсы об Explainable AI:**
+    show_inactive = st.checkbox("Показывать неактивные", value=False)
 
-- Электронная книга ["Interpretable Machine Learning"](https://christophm.github.io/interpretable-ml-book/), автор Кристоф Молнар
-- [Путеводитель по интерпретируемости для LLM](https://github.com/JShollaj/awesome-llm-interpretability)
-- Мой [DataBlog](https://t.me/jdata_blog), об XAI и не только =)           
-''')
+    st.divider()
+    st.caption(
+        "**Classic XAI** — post-hoc объяснения (SHAP, LIME, градиенты, контрфактуалы)\n\n"
+        "**Mechanistic** — анализ внутренней структуры (circuits, SAE, steering, activation patching)\n\n"
+        "**Hybrid** — оба подхода"
+    )
+    st.divider()
+    st.markdown("Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)")
+    st.markdown("[DataBlog](https://t.me/jdata_blog)")
 
-st.markdown('''Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)''')
-st.markdown('''LinkedIn: [Sabrina Sadiekh](www.linkedin.com/in/sabrina-sadiekh-35181a286)''')
-st.markdown('''mail: sad.sabrina.d@yandex.ru''')
+# ── Filter & sort ────────────────────────────────────────────────────────────
+filtered = filter_data(df, paradigms, modalities, methods, search, show_inactive)
+filtered = filtered.sort_values("stars", ascending=False, na_position="last")
 
-st.markdown('''Последнее обновление: 26.01.2025''')
+# ── Stats ────────────────────────────────────────────────────────────────────
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Всего", len(filtered))
+c2.metric("Classic XAI", (filtered["paradigm"] == "Classic XAI").sum())
+c3.metric("Mechanistic", (filtered["paradigm"] == "Mechanistic").sum())
+c4.metric("Hybrid", (filtered["paradigm"] == "Hybrid").sum())
 
-# Data
-merged_table = load_data_from_db()
+# ── Table ────────────────────────────────────────────────────────────────────
+if filtered.empty:
+    st.info("Ничего не найдено — попробуйте изменить фильтры.")
+else:
+    display = filtered[[
+        "library", "url", "paradigm", "modality",
+        "method_category", "scope", "model_agnostic",
+        "stars", "active", "description_en",
+    ]].copy()
 
-# Frameworks list
-FRAMEWORKS = ['skorch', 'scikit-learn', 'SciPy', 'LightGBM', 'tensorflow', 'XGBoost', 'lightning', 'sklearn-crfsuite',
-              'Keras',  'transformers', 'pyspark', 'pytorch', 'CatBoost', 'h2o']
+    st.dataframe(
+        display,
+        use_container_width=True,
+        hide_index=True,
+        height=600,
+        column_config={
+            "library": st.column_config.TextColumn("Библиотека", width=150),
+            "url": st.column_config.LinkColumn("🔗", display_text="открыть", width=90),
+            "paradigm": st.column_config.TextColumn("Парадигма", width=130),
+            "modality": st.column_config.TextColumn("Модальность", width=160),
+            "method_category": st.column_config.TextColumn("Тип метода", width=220),
+            "scope": st.column_config.TextColumn("Scope", width=80),
+            "model_agnostic": st.column_config.TextColumn("Agnostic", width=85),
+            "stars": st.column_config.NumberColumn("⭐", format="%d ★", width=80),
+            "active": st.column_config.TextColumn("Активна", width=75),
+            "description_en": st.column_config.TextColumn("Описание", width=300),
+        },
+    )
 
-#DTYPES
-DTYPES = ['Tabular', 'Images', 'Texts', 'Graph', 'Time Series']
-
-
-framework_choice = st.selectbox('Select your framework', FRAMEWORKS, index=None,
-                                placeholder='Select your framework')
-data_type_choice = st.selectbox('Select your data type:', DTYPES, index=None,
-                                placeholder='Select your data type')
-
-if framework_choice or data_type_choice:
-
-    data_to_schow = filter_dataframe(merged_table, framework_choice, data_type_choice)
-    fig = plot_data_with_hyperlinks(data_to_schow)
-    st.plotly_chart(fig, use_container_width=True)
-
-#Libraries with metrics
-
-st.markdown('''Бибилиотеки с **метриками** интерпретации''')
-st.markdown('''
-            - [Quantus](https://github.com/understandable-machine-intelligence-lab/Quantus)
-            - [shapash](https://github.com/MAIF/shapash#how_shapash_works)
-            - [AIX360](https://github.com/Trusted-AI/AIX360)
-            - [explabox](https://github.com/MarcelRobeer/explabox)
-            - [xai_evals](https://pypi.org/project/xai-evals/)
-            ''')
+# ── Resources ────────────────────────────────────────────────────────────────
+st.divider()
+st.markdown(
+    "**Полезные ресурсы:** "
+    "[Interpretable ML Book](https://christophm.github.io/interpretable-ml-book/) · "
+    "[Awesome LLM Interpretability](https://github.com/JShollaj/awesome-llm-interpretability) · "
+    "[DataBlog](https://t.me/jdata_blog)"
+)
