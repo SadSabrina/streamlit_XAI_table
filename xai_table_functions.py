@@ -23,6 +23,7 @@ METHOD_CATEGORIES = [
 def load_data() -> pd.DataFrame:
     df = pd.read_csv(DATA_PATH)
     df["stars"] = pd.to_numeric(df["stars"], errors="coerce")
+    df["last_updated"] = pd.to_datetime(df["last_updated"], errors="coerce")
     df["note"] = df["note"].fillna("")
     return df
 
@@ -64,7 +65,8 @@ def filter_data(
             | df["method_category"].str.lower().str.contains(q, na=False)
         )
     if not show_inactive:
-        mask &= df["active"].isin(["Yes", "Unknown"]) | df["active"].isna()
+        cutoff = pd.Timestamp.now() - pd.DateOffset(years=1)
+        mask &= df["last_updated"].isna() | (df["last_updated"] >= cutoff)
 
     return df[mask]
 
@@ -86,20 +88,11 @@ def fetch_github_meta(repo_url: str, token=None) -> dict:
         data = r.json()
 
         pushed = (data.get("pushed_at") or "")[:10]
-        if pushed:
-            delta = (
-                datetime.now(timezone.utc)
-                - datetime.fromisoformat(pushed + "T00:00:00+00:00")
-            ).days
-            active = "Yes" if delta < 730 else "No"
-        else:
-            active = "Unknown"
 
         return {
             "description_en": data.get("description") or "",
             "stars": int(data.get("stargazers_count") or 0),
             "last_updated": pushed,
-            "active": active,
             "topics": ", ".join(data.get("topics") or []),
         }
     except Exception as e:

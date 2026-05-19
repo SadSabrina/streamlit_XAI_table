@@ -73,7 +73,7 @@ else:
     display = filtered[[
         "library", "url", "paradigm", "modality",
         "method_category", "scope", "model_agnostic",
-        "stars", "active", "description_en",
+        "stars", "last_updated", "description_en",
     ]].copy()
 
     st.dataframe(
@@ -90,7 +90,7 @@ else:
             "scope": st.column_config.TextColumn("Scope", width=80),
             "model_agnostic": st.column_config.TextColumn("Agnostic", width=85),
             "stars": st.column_config.NumberColumn("⭐", format="%d ★", width=80),
-            "active": st.column_config.TextColumn("Active", width=75),
+            "last_updated": st.column_config.DateColumn("Last update", format="MMM YYYY", width=100),
             "description_en": st.column_config.TextColumn("Description", width=300),
         },
     )
