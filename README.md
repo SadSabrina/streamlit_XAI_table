@@ -36,12 +36,6 @@ All library data is stored in `data/xai_libraries.csv` with the following schema
 
 Metadata (stars, last updated) is fetched automatically from the GitHub API via `enrich.py`.
 
-## Run locally
-
-```bash
-pip install streamlit pandas requests
-streamlit run main_page.py
-```
 
 ## Useful resources
 
@@ -53,8 +47,10 @@ streamlit run main_page.py
 ## Contacts
 
 - Telegram: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)
+- Blog: [DataBlog](https://t.me/jdata_blog)
+- Substack: [@sabrinasadiekh](https://substack.com/@sabrinasadiekh)
 - LinkedIn: [Sabrina Sadiekh](https://www.linkedin.com/in/sabrina-sadiekh-35181a286)
-- Email: sad.sabrina.d@yandex.ru
+- Email: sadsobr7@gmail.com
 
 ## License
 

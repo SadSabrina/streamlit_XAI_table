@@ -52,8 +52,10 @@ with st.sidebar:
         "**Hybrid** — both approaches"
     )
     st.divider()
-    st.markdown("Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh)")
-    st.markdown("[DataBlog](https://t.me/jdata_blog)")
+    st.markdown("**Contacts**")
+    st.markdown("Tg: [@sabrina_sadiekh](https://t.me/sabrina_sadiekh) · [DataBlog](https://t.me/jdata_blog)")
+    st.markdown("[Substack](https://substack.com/@sabrinasadiekh) · [LinkedIn](https://www.linkedin.com/in/sabrina-sadiekh-35181a286)")
+    st.markdown("✉️ [sadsobr7@gmail.com](mailto:sadsobr7@gmail.com)")
 
 # ── Filter & sort ────────────────────────────────────────────────────────────
 filtered = filter_data(df, paradigms, modalities, methods, search, show_inactive)
