@@ -6,7 +6,7 @@ A Streamlit app for finding and filtering libraries for ML model interpretation 
 
 ## What's inside
 
-**51 libraries** across two paradigms:
+**57 libraries** across two paradigms:
 
 - **Classic XAI** — post-hoc explanation methods: SHAP, LIME, gradients, counterfactuals, feature importance, attention visualization
 - **Mechanistic Interpretability** — internal structure analysis: circuits, sparse autoencoders (SAE), activation patching, steering vectors, knowledge editing

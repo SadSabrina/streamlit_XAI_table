@@ -10,6 +10,8 @@ Set GITHUB_TOKEN env var for 5000 req/hour:
   export GITHUB_TOKEN=ghp_...
 """
 
+from __future__ import annotations
+
 import os
 import re
 import time
