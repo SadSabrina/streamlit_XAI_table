@@ -1,10 +1,18 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from xai_table_functions import load_data, filter_data
 
 st.title("XAI Library Navigator")
 st.markdown(
     "Подберите библиотеку для интерпретации модели под вашу задачу. "
     "Фильтруйте по парадигме, модальности данных и типу метода."
+)
+components.html(
+    '<iframe src="https://ghbtns.com/github-btn.html?user=SadSabrina'
+    '&repo=streamlit_XAI_table&type=star&count=true&size=large" '
+    'frameborder="0" scrolling="0" width="170" height="30" '
+    'title="Star XAI Library Navigator on GitHub"></iframe>',
+    height=34,
 )
 
 df = load_data()
