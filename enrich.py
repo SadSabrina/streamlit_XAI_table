@@ -5,9 +5,6 @@ for all libraries in data/xai_libraries.csv using the GitHub API.
 Existing rows are preserved as-is; only metadata fields are overwritten.
 Libraries without a GitHub URL are skipped silently.
 
-GitHub public API: 60 req/hour unauthenticated.
-Set GITHUB_TOKEN env var for 5000 req/hour:
-  export GITHUB_TOKEN=ghp_...
 """
 
 from __future__ import annotations
@@ -18,6 +15,9 @@ import time
 import requests
 import pandas as pd
 from datetime import datetime, timezone
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATA_PATH = "data/xai_libraries.csv"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
