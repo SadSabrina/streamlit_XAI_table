@@ -75,7 +75,9 @@ def refresh():
 
         if meta:
             for field in ("description_en", "stars", "last_updated"):
-                if field in meta:
+                # keep the hand-set value if GitHub returns an empty one
+                # (e.g. a repo with no "About" description)
+                if meta.get(field) not in (None, ""):
                     df.at[i, field] = meta[field]
             updated += 1
             print(f"✓ {meta.get('stars', '?')} ⭐  {meta.get('last_updated', '?')}")
